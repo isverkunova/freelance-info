@@ -67,6 +67,6 @@ gulp.task('default', function() {
     gulp.start('pages', 'js', 'sass', 'images');
     gulp.watch('src/*.html', ['pages']);
     gulp.watch('src/js/*.js', ['js']);
-    gulp.watch('src/sass/*.scss', ['sass']);
+    gulp.watch('src/sass/**/*.scss', ['sass']);
     gulp.watch('src/images/**/*.*', ['images']);
 });
