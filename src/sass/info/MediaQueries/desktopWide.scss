@@ -1,0 +1,6 @@
+@import '../../mq';
+
+@media #{$desktopWide} {
+    @import '../descktop';
+
+}

@@ -58,12 +58,13 @@ gulp.task('webserver', function() {
             directoryListing: false,
             open: true,
             log: 'info',
+            port: 4000,
             defaultFile: 'index.html'
         }));
 });
 
 gulp.task('default', function() {
-    gulp.start('pages', 'js', 'sass', 'images', 'webserver');
+    gulp.start('pages', 'js', 'sass', 'images');
     gulp.watch('src/*.html', ['pages']);
     gulp.watch('src/js/*.js', ['js']);
     gulp.watch('src/sass/*.scss', ['sass']);
