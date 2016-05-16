@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "scss-lint src/sass/* --config lint.yml",
     "postinstall": "npm install -g gulp"
   },
   "repository": {
