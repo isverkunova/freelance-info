@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var server = require('gulp-server-livereload');
@@ -15,7 +15,7 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(rename('app.css'))
-        .pipe(minifycss())
+        .pipe(cleanCSS())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'));
 });
