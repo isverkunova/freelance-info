@@ -1,6 +1,7 @@
 {
   "name": "gulp",
   "version": "1.0.0",
+  "description": "",
   "main": "gulp.js",
   "scripts": {
     "test": "scss-lint src/sass/* --config lint.yml",
