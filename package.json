@@ -30,5 +30,4 @@
     "gulp-server-livereload": "^1.5.4",
     "gulp-sourcemaps": "^1.6.0"
   }
-
 }
