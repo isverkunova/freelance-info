@@ -4,7 +4,7 @@ linters:
   Indentation:
     width: 4
   ColorVariable:
-    enabled: false
+    enabled: true
   EmptyLineBetweenBlocks:
     ignore_single_line_blocks: false
   MergeableSelector:
@@ -12,9 +12,9 @@ linters:
   TransitionAll:
     enabled: true
   VendorPrefix:
-    enabled: false
+    enabled: true
   Comment:
-    enabled: false
+    enabled: true
   UnnecessaryParentReference:
     enabled: false
   NameFormat:
