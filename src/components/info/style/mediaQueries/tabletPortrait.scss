@@ -1,0 +1,10 @@
+@media #{$tabletPortrait} {
+    $m: tabletPortrait;
+
+    @import '../mobile';
+
+    h1 {
+        font-size: px(12, $m);
+        color: blue;
+    }
+}

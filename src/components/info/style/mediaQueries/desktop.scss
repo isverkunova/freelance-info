@@ -1,0 +1,9 @@
+@media #{$desktop} {
+    $m: desktop;
+
+    @import '../desktop';
+
+    h1 {
+        font-size: px(40, $m);
+    }
+}

@@ -1,5 +1,5 @@
-@import '../../mq';
-
 @media #{$phonePortrait} {
+    $m: phonePortrait;
+
     @import '../mobile';
 }

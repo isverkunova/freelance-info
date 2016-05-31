@@ -1,5 +1,5 @@
-@import '../../mq';
-
 @media #{$desktopHD} {
+    $m: desktopHD;
+
     @import '../desktop';
 }

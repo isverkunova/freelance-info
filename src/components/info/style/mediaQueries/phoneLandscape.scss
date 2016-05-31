@@ -1,0 +1,10 @@
+@media #{$phoneLandscape} {
+    $m: phoneLandscape;
+
+    @import '../mobile';
+
+    h1 {
+        font-size: px(20, $m);
+        color: green;
+    }
+}
