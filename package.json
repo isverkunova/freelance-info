@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulp.js",
   "scripts": {
-    "test": "scss-lint src/sass/* --config lint.yml",
+    "test": "scss-lint src/components/* --config lint.yml",
     "postinstall": "npm install -g gulp"
   },
   "repository": {

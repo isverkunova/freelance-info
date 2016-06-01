@@ -10,7 +10,7 @@ var imageMin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 
 gulp.task('sass', function() {
-    return sass('src/sass/main.scss', { sourcemap: true, style: 'compact' })
+    return sass('src/components/main.scss', { sourcemap: true, style: 'compact' })
         .on('error', sass.logError)
         .pipe(sourceMaps.init({loadMaps: true}))
         .pipe(autoPrefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
@@ -20,15 +20,19 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('images', function(){
-    return gulp.src('src/images/**/*.*')
-        .pipe(cache(imageMin()))
-        .pipe(gulp.dest('dist/images'))
-});
-
 gulp.task('pages', function(){
     return gulp.src('src/*.html')
         .pipe(gulp.dest('dist'))
+});
+
+gulp.task('fonts', function(){
+    return gulp.src('src/theme/fonts/*')
+        .pipe(gulp.dest('dist/css/fonts'))
+});
+
+gulp.task('images', function(){
+    return gulp.src('src/theme/images/*/*')
+        .pipe(gulp.dest('dist/images/'))
 });
 
 gulp.task('webserver', function() {
@@ -48,8 +52,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('default', function() {
-    gulp.start('pages', 'sass', 'images', 'webserver');
+    gulp.start('pages', 'sass', 'images', 'fonts', 'webserver');
     gulp.watch('src/*.html', ['pages']);
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/images/**/*.*', ['images']);
 });
