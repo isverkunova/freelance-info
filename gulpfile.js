@@ -32,7 +32,7 @@ gulp.task('fonts', function(){
 
 gulp.task('images', function(){
     return gulp.src('src/theme/images/*/*')
-        .pipe(gulp.dest('dist/theme/images/'))
+        .pipe(gulp.dest('dist/images/'))
 });
 
 gulp.task('webserver', function() {
