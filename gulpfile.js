@@ -54,5 +54,5 @@ gulp.task('webserver', function() {
 gulp.task('default', function() {
     gulp.start('pages', 'sass', 'images', 'fonts', 'webserver');
     gulp.watch('src/*.html', ['pages']);
-    gulp.watch('src/sass/**/*.scss', ['sass']);
+    gulp.watch('src/components/**/*.scss', ['sass']);
 });
