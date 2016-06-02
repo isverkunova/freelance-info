@@ -93,6 +93,7 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
+            background-color: #f3f4f4;
 
             img {
                 width: px(137, $m);
@@ -104,7 +105,6 @@
                 width: px(335, $m);
                 font-size: px(30, $m);
                 color: #6e7b7d;
-
             }
 
             .downloads {
@@ -193,11 +193,10 @@
 
         .internet::after {
             display: block;
-            position: absolute;
+            position: relative;
             width: 100%;
             height: px(6, $m);
-            margin-bottom: px(80, $m);
-            top: px(1006, $m);
+            bottom: 0;
             left: 0;
             content: '';
             background-image: url($pass-to-img + 'divider.svg');
@@ -214,7 +213,32 @@
 
             img {
                 width: px(118, $m);
-                margin: 0 0 px(50, $m) px(-40, $m);
+                margin: px(80, $m) 0 px(50, $m) px(-40, $m);
+            }
+
+            .sets {
+                display: flex;
+
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    & > span {
+                        padding-bottom: px(30, $m);
+                    }
+                }
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    & > span {
+                        font-weight: normal;
+                        padding-bottom: px(30, $m);
+                    }
+                }
             }
 
             .btn-full {
@@ -239,6 +263,10 @@
                 a {
                     color: #fff;
                 }
+
+                &::after {
+                    background: url($pass-to-img + 'videoPlayIcon_hover.svg') no-repeat;
+                }
             }
 
             .btn-full::after {
@@ -257,15 +285,68 @@
 
         .satellite::after {
             display: block;
-            position: absolute;
+            position: relative;
             width: 100%;
             height: px(6, $m);
-            top: px(1006, $m);
+            bottom: 0;
             left: 0;
             content: '';
             background-image: url($pass-to-img + 'divider.svg');
         }
         // END satellite
+
+        .cable {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            padding-top: px(60, $m);
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: #f3f4f4;
+
+            img {
+                width: px(134, $m);
+                margin: 0 0 px(50, $m) px(10, $m);
+            }
+
+            p {
+                text-align: center;
+                width: px(510, $m);
+                font-size: px(30, $m);
+                color: #6e7b7d;
+                line-height: px(36, $m);
+            }
+
+            .btn-empty {
+                position: relative;
+                width: px(380, $m);
+                height: px(100, $m);
+                margin: px(55, $m) 0 px(80, $m);
+                padding: px(33, $m) 0 0 px(92, $m);
+                box-sizing: border-box;
+                border: px(2, $m) solid #2793b2;
+                border-radius: 5px;
+
+                a {
+                    color: #2793b2;
+                    font-size: px(30, $m);
+                }
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    width: px(41, $m);
+                    height: px(42, $m);
+                    content: '';
+                    top: px(28, $m);
+                    left: px(21, $m);
+                    background: url($pass-to-img + 'findOperatorsIcon.svg') no-repeat;
+                    background-size: px(41, $m);
+                    z-index: 20;
+                }
+            }
+        }
     }
     // END container
 }
