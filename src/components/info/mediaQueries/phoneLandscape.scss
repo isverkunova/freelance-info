@@ -3,8 +3,52 @@
 
     @import '../mobile';
 
-    h1 {
-        font-size: px(20, $m);
-        color: red;
+    .container {
+
+        .internet {
+            order: 2;
+        }
+
+        .cable {
+            order: 3;
+        }
+
+        .divider-horizontal {
+            display: none;
+        }
+
+        .divider-vertical {
+            display: block;
+            width: px(6, $m);
+            height: px(60, $m);
+            border-radius: 50px;
+            background-color: $color2;
+            box-sizing: border-box;
+            //margin-bottom: px(54, $m);
+        }
+
+        .satellite {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .satellite-header {
+                flex-direction: row-reverse;
+
+                img {
+                    order: 1;
+                }
+
+                .divider-vertical {
+                    order: 2;
+                }
+
+                h2 {
+                    order: 3;
+                }
+            }
+        }
     }
 }
