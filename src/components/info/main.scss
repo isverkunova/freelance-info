@@ -1,6 +1,7 @@
 .info {
     @import '../../theme/functions';
     @import '../../theme/mq';
+    @import 'mixins';
     @import 'variables';
     @import 'mediaQueries/main';
 }
