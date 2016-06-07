@@ -1,5 +1,372 @@
 & {
-    h1 {
-        color: orange;
+    font-family: 'PT Sans', Arial, sans-serif;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
     }
+
+    h2 {
+        margin-bottom: px(40, $m);
+        color: $color1;
+        font-size: px(44, $m);
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+
+        & > div {
+            width: 100%;
+        }
+
+        .divider-horizontal {
+            width: px(48, $m);
+            height: px(6, $m);
+            margin: 0 px(20, $m) px(34, $m) 0;
+            border-radius: 50px;
+            background-color: $color2;
+            box-sizing: border-box;
+        }
+
+        .divider-vertical {
+            display: none;
+        }
+
+        span {
+            color: $color3;
+            font-size: px(28, $m);
+            font-weight: bold;
+        }
+
+        .internet {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            order: 3;
+            padding: px(76, $m) px(112, $m) px(110, $m) 0;
+            background-color: $color4;
+            box-sizing: border-box;
+
+            .internet-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: px(124, $m);
+                    margin: px(4, $m) 0 px(40, $m) px(16, $m);
+                }
+            }
+
+            .phone-mode {
+                display: none;
+            }
+
+            .wide-mode,
+            .all-modes {
+                width: px(472, $m);
+                margin: px(2, $m) px(12, $m) 0 0;
+                color: $color3;
+                font-size: px(28, $m);
+                line-height: px(36, $m);
+                text-align: center;
+            }
+
+            .downloads {
+                display: inline-flex;
+                align-items: center;
+                width: px(490, $m);
+                margin: px(48, $m) 0 px(52, $m) px(14, $m);
+                box-sizing: border-box;
+
+                .android,
+                .ios {
+                    width: px(120, $m);
+                    height: px(120, $m);
+                    border: px(2, $m) solid $color5;
+                    border-radius: 5px;
+                    background: url($pass-to-img + 'androidIcon.svg') no-repeat center center;
+                    background-size: px(78, $m);
+                    box-sizing: border-box;
+
+                    .link {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .android:hover {
+                    background: $color5 url($pass-to-img + 'androidIcon_hover.png') no-repeat center center;
+                    background-size: px(76, $m);
+                }
+
+                .ios:hover {
+                    background: $color3 url($pass-to-img + 'appleIcon_hover.png') no-repeat center center;
+                    background-size: px(62, $m);
+                }
+
+                .text-field {
+                    position: relative;
+                    text-align: center;
+                }
+
+                .text-field::before {
+                    display: block;
+                    position: absolute;
+                    top: px(76, $m);
+                    left: px(26, $m);
+                    width: px(67, $m);
+                    height: px(17, $m);
+                    background: url($pass-to-img + 'greenArrow.png') no-repeat;
+                    background-size: px(67, $m);
+                    content: '';
+                }
+
+                .text-field::after {
+                    display: block;
+                    position: absolute;
+                    top: px(-26, $m);
+                    left: px(156, $m);
+                    width: px(67, $m);
+                    height: px(17, $m);
+                    background: url($pass-to-img + 'greyArrow.png') no-repeat;
+                    background-size: px(67, $m);
+                    content: '';
+                }
+
+                .ios {
+                    border: px(2, $m) solid $color3;
+                    background: url($pass-to-img + 'appleIcon.svg') no-repeat center center;
+                    background-size: px(66, $m);
+                }
+            }
+
+            .btn-empty {
+                position: relative;
+                width: px(384, $m);
+                margin: px(42, $m) px(12, $m) 0 0;
+                padding: px(22, $m) 0 px(22, $m) px(98, $m);
+                border: px(2, $m) solid $color6;
+                border-radius: 5px;
+                box-sizing: border-box;
+
+                a {
+                    color: $color6;
+                    font-size: px(28, $m);
+                }
+            }
+
+            .btn-empty::after {
+                display: block;
+                position: absolute;
+                top: px(20, $m);
+                left: px(23, $m);
+                width: px(40, $m);
+                height: px(40, $m);
+                background: url($pass-to-img + 'videoPlayIcon.svg') no-repeat;
+                background-size: px(38, $m);
+                content: '';
+                z-index: 20;
+            }
+        }
+
+        .internet::after {
+            display: block;
+            position: absolute;
+            right: px(60, $m);
+            bottom: 0;
+            width: px(860, $m);
+            height: px(8, $m);
+            background-image: url($pass-to-img + 'divider.svg');
+            content: '';
+        }
+        // END internet
+
+        .satellite {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            order: 1;
+            padding: px(76, $m) 0 px(110, $m) px(112, $m);
+            background-color: $color4;
+            box-sizing: border-box;
+
+            .satellite-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: px(108, $m);
+                    margin: 0 px(64, $m) px(38, $m) 0;
+                }
+            }
+
+            .sets {
+                display: flex;
+                flex-wrap: wrap;
+                margin: px(-2.5, $m) 0 0;
+
+                & > div {
+                    width: 50%;
+                    margin-left: px(-2, $m);
+                    padding: px(2, $m) 0 px(30, $m);
+                    box-sizing: border-box;
+
+                    span {
+                        font-weight: normal;
+                        letter-spacing: px(-.4, $m);
+                    }
+
+                    &:nth-child(odd) {
+                        padding: px(2, $m) px(18, $m) px(26, $m);
+                        text-align: right;
+
+                        span {
+                            font-weight: bold;
+                            letter-spacing: px(.2, $m);
+                        }
+                    }
+                }
+
+                .hidden-span {
+                    display: inline-block;
+                    font-weight: normal;
+                    letter-spacing: px(-.4, $m);
+                }
+            }
+
+            .btn-full {
+                position: relative;
+                width: px(421, $m);
+                margin: px(54, $m) px(16, $m) 0 0;
+                padding: px(26, $m) 0 px(22, $m) px(102, $m);
+                border: px(2, $m) solid $color6;
+                border-radius: 5px;
+                box-sizing: border-box;
+
+                a {
+                    color: $color6;
+                    font-size: px(30, $m);
+                    letter-spacing: px(-1, $m);
+
+                    &::after {
+                        content: '?';
+                    }
+                }
+            }
+
+            .btn-full::after {
+                display: block;
+                position: absolute;
+                top: px(22, $m);
+                left: px(25, $m);
+                width: px(36, $m);
+                height: px(36, $m);
+                background: url($pass-to-img + 'videoPlayIcon.svg') no-repeat;
+                content: '';
+                z-index: 20;
+            }
+
+            .tuner {
+
+                .arrow {
+                    display: none;
+                }
+
+                p {
+                    display: none;
+                }
+            }
+        }
+
+        .satellite::after {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: px(60, $m);
+            width: px(860, $m);
+            height: px(8, $m);
+            background-image: url($pass-to-img + 'divider.svg');
+            content: '';
+        }
+        // END satellite
+
+        .cable {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+            padding: px(76, $m) 0 px(110, $m);
+            background-color: $color4;
+            box-sizing: border-box;
+
+            h2 {
+                margin: 0 px(40, $m) px(40, $m) 0;
+            }
+
+
+            .cable-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: px(122, $m);
+                    margin: 0 px(6, $m) px(40, $m) 0;
+                }
+            }
+
+            p {
+                width: px(406, $m);
+                margin: 0 px(6, $m) px(180, $m) 0;
+                color: $color3;
+                font-size: px(28, $m);
+                line-height: px(37, $m);
+                text-align: center;
+            }
+
+            .btn-empty {
+                display: none;
+            }
+
+            .find-operators {
+                position: relative;
+                margin-right: px(10, $m);
+                font-style: italic;
+                letter-spacing: px(.6, $m);
+            }
+
+            .find-operators::before {
+                display: block;
+                position: absolute;
+                top: px(-40, $m);
+                left: px(130, $m);
+                width: px(72, $m);
+                height: px(4, $m);
+                background-color: $color9;
+                content: '';
+            }
+        }
+        // END cable
+
+        .btn-hover:hover {
+            background-color: $color6;
+
+            a {
+                color: $color7;
+            }
+
+            &::after {
+                background: url($pass-to-img + 'videoPlayIcon_hover.svg') no-repeat;
+            }
+        }
+    }
+    // END container
 }

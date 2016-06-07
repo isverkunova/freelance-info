@@ -1,9 +1,9 @@
 & {
-    box-sizing: border-box;
     display: block;
     position: relative;
     width: 100vw;
     font-family: 'PT Sans', Arial, sans-serif;
+    box-sizing: border-box;
 
     a {
         text-decoration: none;
@@ -20,18 +20,17 @@
         display: flex;
         flex-direction: column;
 
-        & > div,
-        & > footer {
+        & > div {
             width: 100%;
         }
 
         .divider-horizontal {
             width: px(60, $m);
             height: px(6, $m);
+            margin-bottom: px(54, $m);
             border-radius: 50px;
             background-color: $color2;
             box-sizing: border-box;
-            margin-bottom: px(54, $m);
         }
 
         .divider-vertical {
@@ -40,24 +39,19 @@
 
         span {
             color: $color3;
+            font-size: px(30, $m);
             font-weight: bold;
-            font-size: px(30, $m);
-        }
-
-        .thin {
-            font-size: px(30, $m);
-            color: $color3;
         }
 
         .internet {
             display: flex;
             position: relative;
             flex-direction: column;
-            padding-top: px(60, $m);
             align-items: center;
             justify-content: center;
-            box-sizing: border-box;
+            padding-top: px(60, $m);
             background-color: $color4;
+            box-sizing: border-box;
 
             .internet-header {
                 display: flex;
@@ -71,29 +65,49 @@
                 }
             }
 
-            p {
-                text-align: center;
+            .phone-mode,
+            .all-modes {
                 width: px(347, $m);
-                font-size: px(30, $m);
                 color: $color3;
+                font-size: px(30, $m);
                 line-height: px(32, $m);
+                text-align: center;
+            }
+
+            .wide-mode {
+                display: none;
             }
 
             .downloads {
-                width: px(519, $m);
                 display: inline-flex;
                 align-items: center;
-                box-sizing: border-box;
+                width: px(519, $m);
                 margin: px(56, $m) 0 px(58, $m);
+                box-sizing: border-box;
 
-                .android, .ios {
+                .android,
+                .ios {
                     width: px(120, $m);
                     height: px(120, $m);
                     border: px(2, $m) solid $color5;
+                    border-radius: 5px;
                     background: url($pass-to-img + 'androidIcon.svg') no-repeat center center;
                     background-size: px(78, $m);
                     box-sizing: border-box;
-                    border-radius: 5px;
+
+                    .link {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .android:hover {
+                    background: $color5 url($pass-to-img + 'androidIcon_hover.png') no-repeat center center;
+                }
+
+                .ios:hover {
+                    background: $color3 url($pass-to-img + 'appleIcon_hover.png') no-repeat center center;
                 }
 
                 .text-field {
@@ -107,31 +121,31 @@
                 .text-field::before {
                     display: block;
                     position: absolute;
-                    width: px(67, $m);
-                    height: px(17, $m);
                     top: px(82, $m);
                     left: px(30, $m);
-                    content: '';
+                    width: px(67, $m);
+                    height: px(17, $m);
                     background: url($pass-to-img + 'greenArrow.png') no-repeat;
                     background-size: px(67, $m);
+                    content: '';
                 }
 
                 .text-field::after {
                     display: block;
                     position: absolute;
-                    width: px(67, $m);
-                    height: px(17, $m);
                     top: px(-22, $m);
                     left: px(192, $m);
-                    content: '';
+                    width: px(67, $m);
+                    height: px(17, $m);
                     background: url($pass-to-img + 'greyArrow.png') no-repeat;
                     background-size: px(67, $m);
+                    content: '';
                 }
 
                 .ios {
+                    border: px(2, $m) solid $color3;
                     background: url($pass-to-img + 'appleIcon.svg') no-repeat center center;
                     background-size: px(66, $m);
-                    border: px(2, $m) solid $color3;
                 }
             }
 
@@ -141,9 +155,9 @@
                 height: px(100, $m);
                 margin: px(55, $m) 0 px(80, $m);
                 padding: px(30, $m) 0 0 px(92, $m);
-                box-sizing: border-box;
                 border: px(2, $m) solid $color6;
                 border-radius: 5px;
+                box-sizing: border-box;
 
                 a {
                     color: $color6;
@@ -154,13 +168,13 @@
             .btn-empty::after {
                 display: block;
                 position: absolute;
-                width: px(40, $m);
-                height: px(41, $m);
-                content: '';
                 top: px(28, $m);
                 left: px(28, $m);
+                width: px(40, $m);
+                height: px(41, $m);
                 background: url($pass-to-img + 'videoPlayIcon.svg') no-repeat;
                 background-size: px(39, $m);
+                content: '';
                 z-index: 20;
             }
         }
@@ -169,8 +183,8 @@
             display: block;
             width: 100%;
             height: px(6, $m);
-            content: '';
             background-image: url($pass-to-img + 'divider.svg');
+            content: '';
         }
         // END internet
 
@@ -200,9 +214,9 @@
                 margin: px(-2.5, $m) 0 0;
 
                 & > div {
-                    box-sizing: border-box;
                     width: 50%;
                     padding: px(4, $m) px(10, $m) px(24, $m);
+                    box-sizing: border-box;
 
                     span {
                         font-weight: normal;
@@ -210,14 +224,18 @@
                     }
 
                     &:nth-child(odd) {
-                        text-align: right;
                         padding: px(2, $m) px(10, $m) px(26, $m);
+                        text-align: right;
 
                         span {
                             font-weight: bold;
                             letter-spacing: 0;
                         }
                     }
+                }
+
+                .hidden-span {
+                    display: none;
                 }
             }
 
@@ -227,9 +245,9 @@
                 height: px(100, $m);
                 margin: px(26, $m) 0 px(80, $m);
                 padding: px(33, $m) 0 0 px(80, $m);
-                box-sizing: border-box;
                 border: px(2, $m) solid $color6;
                 border-radius: 5px;
+                box-sizing: border-box;
 
                 a {
                     color: $color6;
@@ -237,40 +255,28 @@
                 }
             }
 
-            .btn-full:hover {
-                background-color: $color6;
-
-                a {
-                    color: $color7;
-                }
-
-                &::after {
-                    background: url($pass-to-img + 'videoPlayIcon_hover.svg') no-repeat;
-                }
-            }
-
             .btn-full::after {
                 display: block;
                 position: absolute;
-                width: px(41, $m);
-                height: px(41, $m);
-                content: '';
                 top: px(30, $m);
                 left: px(25, $m);
+                width: px(41, $m);
+                height: px(41, $m);
                 background: url($pass-to-img + 'videoPlayIcon.svg') no-repeat;
                 background-size: px(41, $m);
+                content: '';
                 z-index: 20;
             }
-        }
 
-        .tuner {
+            .tuner {
 
-            .arrow {
-                display: none;
-            }
+                .arrow {
+                    display: none;
+                }
 
-            p {
-                display: none;
+                p {
+                    display: none;
+                }
             }
         }
 
@@ -278,8 +284,8 @@
             display: block;
             width: 100%;
             height: px(6, $m);
-            content: '';
             background-image: url($pass-to-img + 'divider.svg');
+            content: '';
         }
         // END satellite
 
@@ -287,25 +293,30 @@
             display: flex;
             position: relative;
             flex-direction: column;
-            padding-top: px(76, $m);
             align-items: center;
             justify-content: center;
-            box-sizing: border-box;
+            padding-top: px(76, $m);
             background-color: $color4;
-            //border-bottom: px(4, $m) solid $color8;
+            box-sizing: border-box;
 
-            img {
-                width: px(135, $m);
-                margin: 0 0 px(48, $m) px(-1, $m);
+            .cable-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: px(135, $m);
+                    margin: 0 0 px(48, $m) px(-1, $m);
+                }
             }
 
             p {
-                text-align: center;
                 width: px(510, $m);
                 margin-top: px(-8, $m);
-                font-size: px(30, $m);
                 color: $color3;
+                font-size: px(30, $m);
                 line-height: px(37, $m);
+                text-align: center;
             }
 
             .btn-empty {
@@ -314,9 +325,9 @@
                 height: px(100, $m);
                 margin: px(52, $m) 0 px(80, $m);
                 padding: px(32, $m) 0 0 px(95, $m);
-                box-sizing: border-box;
                 border: px(2, $m) solid $color6;
                 border-radius: 5px;
+                box-sizing: border-box;
 
                 a {
                     color: $color6;
@@ -326,18 +337,45 @@
                 &::after {
                     display: block;
                     position: absolute;
-                    width: px(41, $m);
-                    height: px(42, $m);
-                    content: '';
                     top: px(28, $m);
                     left: px(25, $m);
+                    width: px(41, $m);
+                    height: px(42, $m);
                     background: url($pass-to-img + 'findOperatorsIcon.svg') no-repeat;
                     background-size: px(41, $m);
+                    content: '';
                     z-index: 20;
                 }
             }
+
+            .find-operators {
+                display: none;
+            }
         }
         // END cable
+
+        .btn-hover:hover {
+            background-color: $color6;
+
+            a {
+                color: $color7;
+            }
+
+            &::after {
+                background: url($pass-to-img + 'videoPlayIcon_hover.svg') no-repeat;
+            }
+        }
+
+        .cable {
+
+            .btn-empty:hover {
+
+                &::after {
+                    background: url($pass-to-img + 'findOperatorsIcon_hover.png') no-repeat;
+                    background-size: px(42, $m);
+                }
+            }
+        }
     }
     // END container
 }
