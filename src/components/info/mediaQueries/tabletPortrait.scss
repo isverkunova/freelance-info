@@ -3,226 +3,193 @@
 
     @import '../mobile';
 
-    h2 {
-        margin-bottom: px(64, $m);
-        font-size: px(50, $m);
+    & {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .container {
-        flex-flow: row wrap;
-
-        .divider-horizontal {
-            width: px(66, $m);
-            height: px(7, $m);
-            margin-bottom: px(70, $m);
+    > div {
+        h2 {
+            font-size: px(50, $m);
         }
 
-        span {
-            font-size: px(32, $m);
-        }
+        button {
+            width: px(460, $m);
+            height: px(112, $m);
+            background-position: px(36, $m) center;
+            background-size: px(42, $m);
+            font-size: px(34, $m);
 
-        .internet {
-            justify-content: flex-start;
-            order: 2;
-            width: 50%;
-            padding: px(104, $m) px(56, $m) 0 0;
-
-            .internet-header {
-
-                img {
-                    width: px(162, $m);
-                    margin: 0 0 px(72, $m) px(54, $m);
-                }
-            }
-
-            .phone-mode {
-                display: none;
-            }
-
-            .wide-mode {
-                display: block;
-                width: px(598, $m);
-                margin: px(-8, $m) px(12, $m) 0 0;
-                color: $color3;
-                font-size: px(32, $m);
-                letter-spacing: .4px;
-                line-height: px(46, $m);
-                text-align: center;
-            }
-
-            .all-modes {
-                width: px(540, $m);
-                font-size: px(34, $m);
-            }
-
-            .downloads {
-                width: px(568, $m);
-                margin: px(66, $m) px(10, $m) px(70, $m) 0;
-
-                .android,
-                .ios {
-                    width: px(146, $m);
-                    height: px(146, $m);
-                    background-size: px(92, $m);
-                }
-
-                .ios {
-                    background-size: px(80, $m);
-                }
-
-                .android:hover {
-                    background-size: px(92, $m);
-                }
-
-                .ios:hover {
-                    background-size: px(80, $m);
-                }
-
-                .text-field {
-                    margin-top: px(-6, $m);
-                    padding: 0 px(10, $m) 0 0;
-                }
-
-                .text-field::before {
-                    top: px(90, $m);
-                    left: px(20, $m);
-                    width: px(78, $m);
-                    height: px(20, $m);
-                    background-size: px(78, $m);
-                }
-
-                .text-field::after {
-                    top: px(-36, $m);
-                    left: px(180, $m);
-                    width: px(78, $m);
-                    height: px(20, $m);
-                    background-size: cover;
-                }
-
-            }
-
-            .btn-empty {
-                width: px(462, $m);
-                height: auto;
-                margin: px(94, $m) 0 0;
-                padding: px(38, $m) 0 px(38, $m) px(112, $m);
-
-                a {
-                    font-size: px(34, $m);
-                }
-            }
-
-            .btn-empty::after {
-                top: px(36, $m);
-                left: px(46, $m);
+            &:hover {
+                background-position: px(36, $m) center;
             }
         }
+    }
 
-        .internet::after {
+    .internet {
+        justify-content: flex-start;
+        order: 2;
+        width: 50%;
+        padding: px(104, $m) px(56, $m) 0 0;
+
+        h2::before {
+            width: px(162, $m);
+            height: px(202, $m);
+            margin: px(2, $m) 0 px(62, $m) px(210, $m);
+        }
+
+        h2::after {
+            margin: px(64, $m) auto px(68, $m);
+        }
+
+        .phoneMode {
             display: none;
         }
-        // END internet
 
-        .satellite {
-            justify-content: flex-start;
-            order: 1;
-            width: 50%;
-            padding: px(104, $m) 0 0 px(32, $m);
+        .wideMode {
+            display: block;
+            width: px(598, $m);
+            margin: 0 px(12, $m) 0 0;
+            color: $color3;
+            font-size: px(34, $m);
+            line-height: px(40, $m);
+            text-align: center;
+        }
 
-            .satellite-header {
+        .downloads {
+            width: px(568, $m);
+            margin: px(74, $m) px(8, $m) px(70, $m) 0;
 
-                img {
-                    width: px(136, $m);
-                    margin: 0 px(46, $m) px(74, $m) 0;
+            a {
+                width: px(144, $m);
+                height: px(144, $m);
+            }
+
+            span {
+                &::before {
+                    top: px(92, $m);
+                    left: px(-40, $m);
+                    width: px(70, $m);
+                    height: px(36, $m);
+                    background-size: px(74, $m);
+                }
+
+                &::after {
+                    top: px(-34, $m);
+                    left: px(120, $m);
+                    width: px(70, $m);
+                    height: px(36, $m);
+                    background-size: px(74, $m);
                 }
             }
 
-            .sets {
-                //margin: px(-2.5, $m) 0 0;
+            .android {
+                background-size: px(90, $m);
 
-                & > div {
-                    padding: px(4, $m) px(10, $m) px(54, $m);
+                &:hover {
+                    background-size: px(92, $m);
+                }
+            }
 
-                    span {
-                        letter-spacing: px(.2, $m);
-                    }
+            .ios {
+                background-size: px(80, $m);
+
+                &:hover {
+                    background-size: px(80, $m);
+                }
+            }
+        }
+
+        p {
+            width: px(528, $m);
+            margin: 0;
+            font-size: px(34, $m);
+        }
+
+        button {
+            margin-top: px(90, $m);
+            background-position: px(44, $m) center;
+
+            &:hover {
+                background-position: px(44, $m) center;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            right: px(108, $m);
+            bottom: px(-146, $m);
+            width: px(535, $m);
+        }
+    }
+    // END internet
+
+    .satellite {
+        justify-content: flex-start;
+        order: 1;
+        width: 50%;
+        padding: px(104, $m) 0 0 px(32, $m);
+
+        h2::before {
+            width: px(134, $m);
+            height: px(198, $m);
+            margin: px(2, $m) 0 px(68, $m) px(154, $m);
+        }
+
+        h2::after {
+            margin: px(64, $m) auto px(68, $m);
+        }
+
+        ul {
+            margin: 0 0 px(98, $m);
+
+            li {
+                padding: 0 0 px(56, $m);
+
+                span {
+                    font-size: px(34, $m);
+                    letter-spacing: px(-.8, $m);
 
                     &:nth-child(odd) {
-                        padding: px(2, $m) px(20, $m) px(26, $m);
-
-                        span {
-                            letter-spacing: px(1, $m);
-                        }
+                        padding: 0 px(18, $m);
+                        letter-spacing: px(.2, $m);
                     }
                 }
             }
-
-            .btn-full {
-                width: px(460, $m);
-                height: auto;
-                margin: px(42, $m) 0 0;
-                padding: px(38, $m) 0 px(38, $m) px(102, $m);
-
-                a {
-                    font-size: px(34, $m);
-                }
-            }
-
-            .btn-full::after {
-                top: px(36, $m);
-                left: px(36, $m);
-            }
         }
 
-        .satellite::after {
-            display: none;
-        }
-        // END satellite
-
-        .cable {
-            order: 3;
-            padding: px(98, $m) 0 px(80, $m);
-
-            .cable-header {
-
-                img {
-                    width: px(156, $m);
-                    margin: 0 px(4, $m) px(74, $m) 0;
-                }
-            }
-
-            .cable-header::before,
-            .cable-header::after {
-                display: block;
-                position: absolute;
-                top: px(218, $m);
-                left: px(104, $m);
-                width: px(535, $m);
-                height: px(6, $m);
-                background-image: url($pass-to-img + 'divider.svg');            }
-                content: '';
-
-            .cable-header::after {
-                right: px(104, $m);
-                left: auto;
-            }
-
-            h2 {
-                margin-bottom: px(72, $m);
-                letter-spacing: px(1, $m);
-            }
-
-            p {
-                width: px(1084, $m);
-                margin-top: 0;
-                font-size: px(34, $m);
-                line-height: px(44, $m);
-            }
-
-            .btn-empty {
-                display: none;
-            }
+        &::after {
+            position: absolute;
+            bottom: px(-146, $m);
+            left: px(106, $m);
+            width: px(535, $m);
         }
     }
-    // END container
+    // END satellite
+
+    .cable {
+        order: 3;
+        padding: 0;
+
+        h2::before {
+            width: px(160, $m);
+            height: px(196, $m);
+            margin: px(18, $m) 0 px(74, $m) px(94, $m);
+        }
+
+        h2::after {
+            margin: px(74, $m) auto px(72, $m);
+        }
+
+        p {
+            width: px(1084, $m);
+            margin-top: 0;
+            font-size: px(34, $m);
+            line-height: px(44, $m);
+        }
+
+        button {
+            display: none;
+        }
+    }
 }

@@ -1,8 +1,8 @@
 //dynamically set order
 @mixin set-order {
 
-    @for $i from 1 through 10 {
-        div:nth-child(#{$i}) {
+    @for $i from 1 through 5 {
+        li:nth-child(#{$i}) {
             order: $i;
         }
     }

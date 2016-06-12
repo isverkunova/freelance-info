@@ -3,210 +3,179 @@
 
     @import '../mobile';
 
-    .container {
+    > div {
+        h2 {
+            position: relative;
+            width: 100%;
 
-        .divider-horizontal {
-            display: none;
+            &::after {
+                position: absolute;
+                width: px(6, $m);
+                height: px(60, $m);
+                margin: 0;
+            }
         }
+    }
 
-        .divider-vertical {
-            display: block;
-            width: px(6, $m);
-            height: px(60, $m);
-            border-radius: 50px;
-            background-color: $color2;
-            box-sizing: border-box;
-            //margin-bottom: px(54, $m);
-        }
+    .internet {
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        order: 2;
 
-        .internet {
-            flex-direction: row;
-            flex-wrap: wrap;
-            order: 2;
-            padding-top: px(76, $m);
+        h2 {
+            margin: px(74, $m) 0 px(116, $m) px(498, $m);
 
-            .phone-mode,
-            .all-modes {
-                margin: 0 px(28, $m) 0 px(64, $m);
-                text-align: right;
+            &::before {
+                position: absolute;
+                top: px(-56, $m);
+                left: px(-486, $m);
             }
 
-            .internet-header {
-                display: flex;
-                flex-direction: inherit;
-                align-items: center;
-                justify-content: flex-start;
-                width: 100vw;
-                padding-left: 100px;
-
-                img {
-                    order: 1;
-                    margin: 0;
-                }
-
-                .divider-vertical {
-                    order: 2;
-                    margin: 0 px(78, $m);
-                }
-
-                h2 {
-                    order: 3;
-                    margin-bottom: 0;
-                }
-            }
-
-            .downloads {
-                width: 50%;
-                margin: px(52, $m);
-            }
-
-            .btn-empty {
-                margin: px(30, $m) px(244, $m) px(12, $m) px(56, $m);
+            &::after {
+                top: px(-6, $m);
+                left: px(-80, $m);
             }
         }
 
-        .internet::after {
-            margin-top: px(86, $m);
+        p {
+            margin: px(8, $m) px(-4, $m) 0 px(4, $m);
+            text-align: right;
         }
-        // END internet
 
-        .satellite {
-            //height: px(655, $m);
+        .phoneMode {
+            margin: px(24, $m) px(-10, $m) 0 px(4, $m);
+        }
+
+        .downloads {
+            margin: 0 px(70, $m) px(80, $m) 0;
+        }
+
+        button {
+            margin: 0 px(208, $m) px(100, $m) 0;
+        }
+    }
+    // END internet
+
+    .satellite {
+        flex-flow: row-reverse wrap;
+        align-items: flex-start;
+        order: 1;
+
+        h2 {
+            margin: px(56, $m) 0 px(118, $m) px(68, $m);
+
+            &::before {
+                position: absolute;
+                top: px(-76, $m);
+                left: px(550, $m);
+            }
+
+            &::after {
+                top: px(-6, $m);
+                left: px(496, $m);
+            }
+        }
+
+        ul {
+            @include set-order;
+
             display: flex;
-            flex-flow: row-reverse wrap;
-            align-items: flex-start;
-            justify-content: center;
-            order: 1;
+            flex-flow: column wrap;
+            width: 50%;
+            height: px(326, $m);
+            margin-bottom: px(52, $m);
 
-            .satellite-header {
-                flex-direction: row-reverse;
-                align-items: center;
-                justify-content: space-between;
-                width: px(806, $m);
-                margin: px(56, $m) px(194, $m) px(56, $m) 0;
+            li {
+                width: 50%;
+                padding: 0;
 
-                img {
-                    order: 1;
-                    margin: 0 0 0 px(114, $m);
-                }
-
-                .divider-vertical {
-                    order: 2;
-                }
-
-                h2 {
-                    order: 3;
-                    margin-bottom: 0;
-                }
-            }
-
-            .sets {
-                @include set-order;
-
-                flex-direction: column;
-                width: px(568, $m);
-                height: px(326, $m);
-
-                & > div {
-                    padding: 0 0 px(40, $m);
+                span {
+                    width: 100%;
+                    padding: 0 0 px(44, $m);
 
                     &:nth-child(odd) {
                         padding: 0 0 px(4, $m);
                         text-align: left;
                     }
-
-                    &:nth-child(3) {
-                        order: 9;
-                    }
-
-                    &:nth-child(4) {
-                        order: 10;
-                    }
-
-                    &:nth-child(9) {
-                        order: 3;
-                    }
-
-                    &:nth-child(10) {
-                        order: 4;
-                    }
-                }
-            }
-
-            .tuner {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                width: px(568, $m);
-                height: px(284, $m);
-                margin-bottom: px(92, $m);
-
-                .arrow {
-                    display: block;
-                    width: px(18, $m);
                 }
 
-                p {
-                    display: block;
-                    position: relative;
-                    width: px(385, $m);
-                    color: $color3;
-                    font-size: px(24, $m);
-                    font-style: italic;
-                    line-height: px(30, $m);
-                    text-align: center;
+                &:nth-child(4) {
+                    padding-left: px(18, $m);
                 }
 
-                .btn-full {
-                    margin: 0;
-                }
-            }
-        }
-        // END satellite
-
-        .cable {
-            flex-flow: row wrap;
-            order: 3;
-            padding: 0;
-
-            .cable-header {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                order: 1;
-                width: px(806, $m);
-                margin: px(54, $m) px(70, $m) 0 0;
-
-                img {
-                    order: 3;
-                    width: px(135, $m);
-                    margin: 0 px(34, $m) 0 px(62, $m);
+                &:nth-child(2) {
+                    order: 5;
+                    padding-left: px(18, $m);
                 }
 
-                h2 {
-                    order: 1;
-                    margin-bottom: 0;
-                }
-
-                .divider-vertical {
+                &:nth-child(5) {
                     order: 2;
                 }
-
-            }
-
-            p {
-                order: 3;
-                margin: px(42, $m) auto px(94, $m);
-                text-align: left;
-            }
-
-            .btn-empty {
-                order: 2;
-                margin: px(12, $m) px(40, $m) px(54, $m) px(92, $m);
             }
         }
-        // END cable
+
+        button {
+            margin: 0 px(94, $m) px(80, $m);
+
+            &::after {
+                position: absolute;
+                right: px(184, $m);
+                bottom: px(-84, $m);
+                width: px(18, $m);
+                height: px(66, $m);
+                background: url($pass-to-img + 'greyArrowUp.png') no-repeat;
+                background-size: px(18, $m);
+                content: '';
+            }
+        }
+
+        .description {
+            display: block;
+            position: absolute;
+            bottom: px(44, $m);
+            left: px(88, $m);
+            width: px(385, $m);
+            color: $color3;
+            font-size: px(24, $m);
+            font-style: italic;
+            line-height: px(30, $m);
+            text-align: center;
+        }
     }
-    // END container
+    // END satellite
+
+    .cable {
+        flex-flow: row wrap;
+        order: 3;
+
+        h2 {
+            order: 1;
+            margin: px(56, $m) 0 px(104, $m) px(128, $m);
+
+            &::before {
+                position: absolute;
+                top: px(-82, $m);
+                left: px(554, $m);
+            }
+
+            &::after {
+                top: px(-6, $m);
+                left: px(438, $m);
+            }
+        }
+
+        button {
+            order: 2;
+            margin: 0 px(60, $m) px(82, $m) px(92, $m);
+        }
+
+        p {
+            order: 3;
+            width: px(536, $m);
+            margin: 0 auto px(90, $m);
+            text-align: left;
+        }
+    }
+    // END cable
 }
